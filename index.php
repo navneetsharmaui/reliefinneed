@@ -25,34 +25,59 @@ if (!empty($_GET['location'])){
   $breezometer_array = json_decode($breezometer_json, true);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
   <head>
-    <meta charset="utf-8"/>
-    <title>reliefinneed</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title> Maps </title>
+
+    <!-- Loading flat-ui-->
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/vendor/bootstrap.min.css">
+  
+    <!-- Loading flat-ui-->
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/flat-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/font-awesome-4.4.0/css/font-awesome.min.css">
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="bower_components/flat-ui/dist/js/vendor/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/flat-ui/dist/js/vendor/video.js"></script>
+    <script src="bower_components/flat-ui/dist/js/flat-ui.min.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
   </head>
   <body>
-    <script>
+  <script>
 
-    
+    // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
-        if (response.status === 'connected') {
-    
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
       testAPI();
     } else if (response.status === 'not_authorized') {
-    
+      // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
     } else {
-    
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
   }
 
-
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
@@ -66,7 +91,17 @@ if (!empty($_GET['location'])){
       xfbml      : true,
       version    : 'v2.4'
     });
-
+    // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
 
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -81,7 +116,8 @@ if (!empty($_GET['location'])){
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
@@ -89,16 +125,43 @@ if (!empty($_GET['location'])){
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-
+  }
     FB.logout(function(response) {
         // Person is now logged out
     });
 </script>
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+       </button>
+       <a class="navbar-brand" href="#"><img src="#" alt="Brand"> reliefineed</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="#"><a href="#fakelink">Profile</a></li>
+        <li><a href="#fakelink">Features</a></li>
+      </ul>
+    <form class="navbar-form navbar-right" action="#" role="search">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn"><span class="fui-search"></span></button>
+            </span>
+         </div>
+        </div>
+      </form>
+    </div><!-- /.navbar-collapse -->
+        </nav><!-- /navbar -->
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-<fb:logout-button scope="public_profile,email" onlogout="checkLogoutState();">
-</fb:logout-button>
 
 <div id="status">
 </div>
