@@ -172,10 +172,7 @@ if (!empty($_GET['location'])){
   data-width="450"
   data-show-faces="true">
 </div>
-  <form action="index.php" method="get">
-    <input type="text" name="location"/>
-    <button type="submit">Submit</button>
-  </form>
+
     <br/>
     <?php
     if(!empty($breezometer_array)){
