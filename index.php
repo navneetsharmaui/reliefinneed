@@ -60,17 +60,20 @@ if (!empty($_GET['location'])){
       <ul class="nav navbar-nav navbar-right">
         <li class="#"><a href="#fakelink">Profile</a></li>
         <li><a href="#fakelink">Features</a></li>
+        <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button></li>
       </ul>
-    <form class="navbar-form navbar-right" action="#" role="search">
+    <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
       <div class="form-group">
         <div class="input-group">
-          <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+          <input class="form-control" id="navbarInput-01" type="text" name="location" placeholder="Search">
             <span class="input-group-btn">
               <button type="submit" class="btn"><span class="fui-search"></span></button>
             </span>
          </div>
         </div>
       </form>
+
     </div><!-- /.navbar-collapse -->
         </nav><!-- /navbar -->
   <script>
@@ -136,24 +139,11 @@ if (!empty($_GET['location'])){
     });
 </script>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-<fb:logout-button scope="public_profile,email" onlogout="checkLogoutState();">
-</fb:logout-button>
 
-<div id="status">
-</div>
 
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-  <form action="index.php" method="get">
-    <input type="text" name="location"/>
-    <button type="submit">Submit</button>
-  </form>
+
+
+
     <br/>
     <?php
     if(!empty($breezometer_array)){
