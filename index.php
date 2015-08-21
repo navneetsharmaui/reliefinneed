@@ -284,14 +284,14 @@ if (!empty($_GET['location'])){
       }
     }
     ?>
-    		                </div>
-	                </div>
-              </div>
-    
+	    	</div>
+		 </div>
+	   </div>
 
-	            </div>
-             </div>
-          </div>
+
+     </div>
+   </div> 
+  </div>
 
   </body>
 </html>
