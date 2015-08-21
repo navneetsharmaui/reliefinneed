@@ -30,38 +30,8 @@ if (!empty($_GET['location'])){
   <head>
     <meta charset="utf-8"/>
     <title>reliefinneed</title>
-    
-   
-
   </head>
   <body>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-          <span class="sr-only">Toggle navigation</span>
-       </button>
-       <a class="navbar-brand" href="#"><img src="#" alt="Brand"> Mess Menu</a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-01">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="#"><a href="#fakelink">Profile</a></li>
-        <li><a href="#fakelink">Features</a></li>
-        <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button></li>
-      </ul>
-    <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" id="navbarInput-01" type="text" name="location" placeholder="Search">
-            <span class="input-group-btn">
-              <button type="submit" class="btn"><span class="fui-search"></span></button>
-            </span>
-         </div>
-        </div>
-      </form>
-
-    </div><!-- /.navbar-collapse -->
-        </nav><!-- /navbar -->
   <script>
 
     
@@ -125,11 +95,24 @@ if (!empty($_GET['location'])){
     });
 </script>
 
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+<fb:logout-button scope="public_profile,email" onlogout="checkLogoutState();">
+</fb:logout-button>
 
+<div id="status">
+</div>
 
-
-
-
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+  <form action="index.php" method="get">
+    <input type="text" name="location"/>
+    <button type="submit">Submit</button>
+  </form>
     <br/>
     <?php
     if(!empty($breezometer_array)){
