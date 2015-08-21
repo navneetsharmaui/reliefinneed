@@ -108,6 +108,9 @@ if (!empty($_GET['location'])){
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+    FB.logout(function(response) {
+        // Person is now logged out
+    });
 </script>
 <!--
   Below we include the Login Button social plugin. This button uses
