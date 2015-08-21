@@ -32,7 +32,83 @@ if (!empty($_GET['location'])){
     <title>reliefinneed</title>
   </head>
   <body>
+    <script>
 
+    
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+        if (response.status === 'connected') {
+    
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+    
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+    
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '945627935508879',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+
+    FB.logout(function(response) {
+        // Person is now logged out
+    });
+</script>
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+<fb:logout-button scope="public_profile,email" onlogout="checkLogoutState();">
+</fb:logout-button>
+
+<div id="status">
+</div>
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
   <form action="index.php" method="get">
     <input type="text" name="location"/>
     <button type="submit">Submit</button>
