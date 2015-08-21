@@ -51,17 +51,47 @@ if (!empty($_GET['location'])){
         echo '<p> Overall Country air quality = "'.$count_description.'"</p><br>';
       
 
+
       foreach($breezometer_array['random_recommendations'] as $data){
-        echo '<p>"'.$data.'"</p><br>';
-      } 
+      	if ($breezometer_array['random_recommendations']['children'] == $data) {
+      	 echo '<p> children: "'.$data.'"</p>';	
+      	}
+      	
+      	elseif ($breezometer_array['random_recommendations']['sport'] == $data) {
+      	 echo '<p> sport: "'.$data.'"</p>';
+      	}
+      	
+      	elseif ($breezometer_array['random_recommendations']['health'] == $data) {
+      	 echo '<p> health = "'.$data.'"</p>';
+      	}
+      	elseif ($breezometer_array['random_recommendations']['inside'] == $data) {
+      	 echo '<p> inside = "'.$data.'"</p>';
+      	}      	
+      	elseif ($breezometer_array['random_recommendations']['outside'] == $data) {
+      	 echo '<p> outside = "'.$data.'"</p>';
+      	}
+        
+      }  
+      
       $pollutant_name = $breezometer_array['dominant_pollutant_canonical_name']; 
-        echo '<p> Dominant pollutant canonical name = "'.$pollutant_name.'"</p><br>';
+        echo '<br><p> Dominant pollutant canonical name = "'.$pollutant_name.'"</p><br>';
       
       $pollutant_description = $breezometer_array['dominant_pollutant_description'];
-        echo '<p> Dominant pollutant description  = "'.$pollutant_description.'"</p>';
+        echo '<p> Dominant pollutant description  = "'.$pollutant_description.'"</p><br>';
       
       foreach($breezometer_array['dominant_pollutant_text'] as $pollutant_text){
-        echo '<p>"'.$pollutant_text.'"</p>';
+      	if ($breezometer_array['dominant_pollutant_text']['main'] == $pollutant_text) {
+      	 echo '<p> main = "'.$pollutant_text.'"</p>';	
+      	}
+      	
+      	elseif ($breezometer_array['dominant_pollutant_text']['effects'] == $pollutant_text) {
+      	 echo '<p> effects = "'.$pollutant_text.'"</p>';
+      	}
+      	
+      	elseif ($breezometer_array['dominant_pollutant_text']['causes'] == $pollutant_text) {
+      	 echo '<p> causes = "'.$pollutant_text.'"</p>';
+      	}
+        
       }
     }
     ?>
