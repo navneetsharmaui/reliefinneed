@@ -30,8 +30,49 @@ if (!empty($_GET['location'])){
   <head>
     <meta charset="utf-8"/>
     <title>reliefinneed</title>
+    
+    <!-- Loading flat-ui-->
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/vendor/bootstrap.min.css">
+  
+    <!-- Loading flat-ui-->
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/flat-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/font-awesome-4.4.0/css/font-awesome.min.css">
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="bower_components/flat-ui/dist/js/vendor/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/flat-ui/dist/js/vendor/video.js"></script>
+    <script src="bower_components/flat-ui/dist/js/flat-ui.min.js"></script>
+
+
   </head>
   <body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+       </button>
+       <a class="navbar-brand" href="#"><img src="#" alt="Brand"> Mess Menu</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="#"><a href="#fakelink">Profile</a></li>
+        <li><a href="#fakelink">Features</a></li>
+      </ul>
+    <form class="navbar-form navbar-right" action="#" role="search">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn"><span class="fui-search"></span></button>
+            </span>
+         </div>
+        </div>
+      </form>
+    </div><!-- /.navbar-collapse -->
+        </nav><!-- /navbar -->
   <script>
 
     
@@ -50,7 +91,7 @@ if (!empty($_GET['location'])){
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
-  }
+  }, { scope: 'email,user_birthday,user_location,user_hometown' };
 
 
   function checkLoginState() {
@@ -89,16 +130,7 @@ if (!empty($_GET['location'])){
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-    FB.api(
-    "/me/locations",
-    function (response) {
-      if (response && !response.error) {
-        console.log('Successful login for: ' + response.name);
-        document.getElementById('location').innerHTML =
-        'location: ' + response.locations + '!';
-       }
-     });
-  }
+
     FB.logout(function(response) {
         // Person is now logged out
     });
@@ -111,8 +143,7 @@ if (!empty($_GET['location'])){
 
 <div id="status">
 </div>
-<div id="location">
-</div>
+
 <div
   class="fb-like"
   data-share="true"
