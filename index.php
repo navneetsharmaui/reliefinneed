@@ -89,6 +89,15 @@ if (!empty($_GET['location'])){
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+    FB.api(
+    "/me/locations",
+    function (response) {
+      if (response && !response.error) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('location').innerHTML =
+        'location: ' + response.locations + '!';
+       }
+     });
   }
     FB.logout(function(response) {
         // Person is now logged out
@@ -101,6 +110,8 @@ if (!empty($_GET['location'])){
 </fb:logout-button>
 
 <div id="status">
+</div>
+<div id="location">
 </div>
 <div
   class="fb-like"
