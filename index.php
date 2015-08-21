@@ -29,7 +29,7 @@ if (!empty($_GET['location'])){
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title> Maps </title>
+    <title> Reliefinneed </title>
 
     <!-- Loading flat-ui-->
     <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/vendor/bootstrap.min.css">
@@ -147,12 +147,12 @@ if (!empty($_GET['location'])){
         <li class="#"><a href="#fakelink">Profile</a></li>
         <li><a href="#fakelink">Features</a></li>
       </ul>
-    <form class="navbar-form navbar-right" action="#" role="search">
+    <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
       <div class="form-group">
         <div class="input-group">
-          <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+          <input class="form-control" id="navbarInput-01" type="text" name="location" placeholder="Search">
             <span class="input-group-btn">
-              <button type="submit" class="btn"><span class="fui-search"></span></button>
+              <button type="submit" class="btn"><span class="fui-search"></span> Search</button>
             </span>
          </div>
         </div>
