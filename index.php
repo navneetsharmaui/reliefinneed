@@ -120,6 +120,8 @@ if (!empty($_GET['location'])){
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
+<fb:logout-button scope="public_profile,email" onlogout="checkLogoutState();">
+</fb:logout-button>
 
 <div id="status">
 </div>
