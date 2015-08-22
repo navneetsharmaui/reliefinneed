@@ -1,4 +1,18 @@
 <?php
+
+/**
+ * Profile
+ */
+
+// Initialisation
+require_once('New_folder/includes/init.php');
+
+// Require the user to be logged in before they can see this page.
+Auth::getInstance()->requireLogin();
+
+// Set the title, show the page header, then the rest of the HTML
+$page_title = 'index';
+
 if (!empty($_GET['location'])){
   /**
    * Here we build the url we'll be using to access the google maps api
@@ -29,7 +43,7 @@ if (!empty($_GET['location'])){
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title> Maps </title>
+    <title> reliefinneed </title>
 
     <!-- Loading flat-ui-->
     <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/dist/css/vendor/bootstrap.min.css">
@@ -40,12 +54,12 @@ if (!empty($_GET['location'])){
     <link rel="stylesheet" type="text/css" href="bower_components/flat-ui/font-awesome-4.4.0/css/font-awesome.min.css">
 
 
-	<link rel="stylesheet" href="bower_components/css/animate.css">
-	<link rel="stylesheet" href="bower_components/css/magnific-popup.css">
-	<link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
-	<link rel="stylesheet" href="bower_components/css/form-elements.css">
-	<link rel="stylesheet" href="public/assets/css/style.css">
-	<link rel="stylesheet" href="bower_components/css/media-queries.css">
+  <link rel="stylesheet" href="bower_components/css/animate.css">
+  <link rel="stylesheet" href="bower_components/css/magnific-popup.css">
+  <link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
+  <link rel="stylesheet" href="bower_components/css/form-elements.css">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+  <link rel="stylesheet" href="bower_components/css/media-queries.css">
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
     <script src="bower_components/flat-ui/dist/js/vendor/jquery.min.js"></script>
     
@@ -156,12 +170,24 @@ if (!empty($_GET['location'])){
        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
           <span class="sr-only">Toggle navigation</span>
        </button>
-       <a class="navbar-brand" href="#"><!--<img src="#" alt="Brand"> -->reliefineed</a>
+       <a class="navbar-brand" href="/sandbox/breez/New_folder/index.php"><!--<img src="#" alt="Brand"> -->reliefineed</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
       <ul class="nav navbar-nav navbar-right">
-        <li class="#"><a href="#fakelink">Profile</a></li>
-        <li><a href="#fakelink">Features</a></li>
+       <?php if (Auth::getInstance()->isLoggedIn()): ?>
+
+          <?php if (Auth::getInstance()->isAdmin()): ?>
+           <li class="#"><a href="/sandbox/breez/New_folder/admin/users">Admin</a></li>
+          <?php endif; ?>
+
+            <li><a href="/sandbox/breez/New_folder/profile.php">Profile</a></li>
+            <li><a href="/sandbox/breez/New_folder/logout.php">Logout</a></li>
+            
+          <?php else: ?> 
+
+            <li><a href="/sandbox/breez/New_folder/login.php">Login</a></li>
+          
+          <?php endif; ?>        
       </ul>
     <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
       <div class="form-group">
@@ -173,6 +199,7 @@ if (!empty($_GET['location'])){
          </div>
         </div>
       </form>
+    
     </div><!-- /.navbar-collapse -->
         </nav><!-- /navbar -->
 
@@ -186,7 +213,7 @@ if (!empty($_GET['location'])){
                         <h1><br></h1>
                         <h1><br></h1>
                         <h1><br></h1>
-	            		<!-- <p>load more lines here.</p> -->
+                  <!-- <p>load more lines here.</p> -->
                     </div>
                 </div>
             </div>
@@ -207,25 +234,26 @@ if (!empty($_GET['location'])){
 </div>
 
     <br/>
-		<div class="work-container">
-	    	<div class="container">
+    <link rel="stylesheet" href="bower_components/css/style.css">
+    <div class="work-container">
+        <div class="container">
 
-		      <div class="row">
-		                          <div class="col-sm-4">
-		                <div class="work wow fadeInDown">
+          <div class="row">
+                              <div class="col-sm-4">
+                    <div class="work wow fadeInDown">
 
-		                    <h4>How to use this app ?</h4>
-		                     <ul>
-		                     	<li>Just login</li>
-		                     	<li>verify your facebook account</li>
-		                     	<li>Type any foriegn city name in navbar search box.</li>
-		                     	<li>It's simple as that!</li>
-		                     </ul>
+                        <h4>How to use this app ?</h4>
+                         <ul>
+                          <li>Just login</li>
+                          <li>verify your facebook account</li>
+                          <li>Type any foriegn city name in navbar search box.</li>
+                          <li>It's simple as that!</li>
+                         </ul>
 
-		                </div>
-		            </div>
-		       <div class="col-sm-8">
-		         <div class="work wow fadeInUp">
+                    </div>
+                </div>
+           <div class="col-sm-8">
+             <div class="work wow fadeInUp">
     <?php
     if(!empty($breezometer_array)){
        $country = $breezometer_array['country_name'];
@@ -242,23 +270,23 @@ if (!empty($_GET['location'])){
 
 
       foreach($breezometer_array['random_recommendations'] as $data){
-      	if ($breezometer_array['random_recommendations']['children'] == $data) {
-      	 echo '<p> children: "'.$data.'"</p>';	
-      	}
-      	
-      	elseif ($breezometer_array['random_recommendations']['sport'] == $data) {
-      	 echo '<p> sport: "'.$data.'"</p>';
-      	}
-      	
-      	elseif ($breezometer_array['random_recommendations']['health'] == $data) {
-      	 echo '<p> health = "'.$data.'"</p>';
-      	}
-      	elseif ($breezometer_array['random_recommendations']['inside'] == $data) {
-      	 echo '<p> inside = "'.$data.'"</p>';
-      	}      	
-      	elseif ($breezometer_array['random_recommendations']['outside'] == $data) {
-      	 echo '<p> outside = "'.$data.'"</p>';
-      	}
+        if ($breezometer_array['random_recommendations']['children'] == $data) {
+         echo '<p> children: "'.$data.'"</p>';  
+        }
+        
+        elseif ($breezometer_array['random_recommendations']['sport'] == $data) {
+         echo '<p> sport: "'.$data.'"</p>';
+        }
+        
+        elseif ($breezometer_array['random_recommendations']['health'] == $data) {
+         echo '<p> health = "'.$data.'"</p>';
+        }
+        elseif ($breezometer_array['random_recommendations']['inside'] == $data) {
+         echo '<p> inside = "'.$data.'"</p>';
+        }       
+        elseif ($breezometer_array['random_recommendations']['outside'] == $data) {
+         echo '<p> outside = "'.$data.'"</p>';
+        }
         
       }  
       
@@ -269,29 +297,29 @@ if (!empty($_GET['location'])){
         echo '<p> Dominant pollutant description  = "'.$pollutant_description.'"</p><br>';
       
       foreach($breezometer_array['dominant_pollutant_text'] as $pollutant_text){
-      	if ($breezometer_array['dominant_pollutant_text']['main'] == $pollutant_text) {
-      	 echo '<p> main = "'.$pollutant_text.'"</p>';	
-      	}
-      	
-      	elseif ($breezometer_array['dominant_pollutant_text']['effects'] == $pollutant_text) {
-      	 echo '<p> effects = "'.$pollutant_text.'"</p>';
-      	}
-      	
-      	elseif ($breezometer_array['dominant_pollutant_text']['causes'] == $pollutant_text) {
-      	 echo '<p> causes = "'.$pollutant_text.'"</p>';
-      	}
+        if ($breezometer_array['dominant_pollutant_text']['main'] == $pollutant_text) {
+         echo '<p> main = "'.$pollutant_text.'"</p>'; 
+        }
+        
+        elseif ($breezometer_array['dominant_pollutant_text']['effects'] == $pollutant_text) {
+         echo '<p> effects = "'.$pollutant_text.'"</p>';
+        }
+        
+        elseif ($breezometer_array['dominant_pollutant_text']['causes'] == $pollutant_text) {
+         echo '<p> causes = "'.$pollutant_text.'"</p>';
+        }
         
       }
     }
     ?>
-	    	</div>
-		 </div>
-	   </div>
+                        </div>
+                  </div>
+              </div>
+    
 
-
-     </div>
-   </div> 
-  </div>
+              </div>
+             </div>
+          </div>
 
   </body>
 </html>
