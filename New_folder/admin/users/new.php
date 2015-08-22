@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($user->save($_POST)) {
     // Redirect to show page
-    Util::redirect('/sandbox/breez/New_folder/admin/users/show.php?id=' . $user->id);
+    Util::redirect('/New_folder/admin/users/show.php?id=' . $user->id);
   }
 }
 

@@ -23,7 +23,7 @@ include('../../includes/header.php');
 
 <h1>User</h1>
 
-<p><a href="/sandbox/breez/New_folder/admin/users">&laquo; back to list of users</a></p>
+<p><a href="/New_folder/admin/users">&laquo; back to list of users</a></p>
 
 <dl class="uk-description-list-horizontal">
   <dt>Name</dt>
@@ -36,11 +36,11 @@ include('../../includes/header.php');
   <dd><?php echo $user->is_admin ? '&#10004;' : '&#10008;'; ?></dd>
 </dl>
 
-<a href="/sandbox/breez/New_folder/admin/users/edit.php?id=<?php echo $user->id; ?>" class="uk-button uk-button-primary">Edit</a></li>
+<a href="/New_folder/admin/users/edit.php?id=<?php echo $user->id; ?>" class="uk-button uk-button-primary">Edit</a></li>
 <?php if ($user->id == Auth::getInstance()->getCurrentUser()->id): ?>
   Delete
 <?php else: ?>
-  <a href="/sandbox/breez/New_folder/admin/users/delete.php?id=<?php echo $user->id; ?>" class="uk-button uk-button-danger">Delete</a>
+  <a href="/New_folder/admin/users/delete.php?id=<?php echo $user->id; ?>" class="uk-button uk-button-danger">Delete</a>
 <?php endif; ?>
     
 <?php include('../../includes/footer.php'); ?>

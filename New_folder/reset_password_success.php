@@ -15,6 +15,6 @@ include('includes/header.php');
 
 <h1>Reset password</h1>
 
-<p>Success! Your password has been reset. You can now <a href="/sandbox/breez/New_folder/login.php">log in</a>.</p>
+<p>Success! Your password has been reset. You can now <a href="/New_folder/login.php">log in</a>.</p>
 
 <?php include('includes/footer.php'); ?>

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $user->delete();
 
   // Redirect to index page
-  Util::redirect('/sandbox/breez/New_folder/admin/users');
+  Util::redirect('/New_folder/admin/users');
 }
 
 
@@ -39,7 +39,7 @@ include('../../includes/header.php');
   <p>Are you sure?</p>
 
   <button class="uk-button uk-button-danger">Delete</button>
-  <a href="/login2/New_folder/admin/users/show.php?id=<?php echo $user->id; ?>">Cancel</a>
+  <a href="/New_folder/admin/users/show.php?id=<?php echo $user->id; ?>">Cancel</a>
 </form>
 
     

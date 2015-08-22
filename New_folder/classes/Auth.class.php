@@ -179,7 +179,7 @@ class Auth
         $_SESSION['return_to'] = $url;
       }
 
-      Util::redirect('/sandbox/breez/New_folder/login.php');
+      Util::redirect('/New_folder/login.php');
     }
   }
 
@@ -192,7 +192,7 @@ class Auth
   public function requireGuest()
   {
     if ($this->isLoggedIn()) {
-      Util::redirect('/sandbox/breez/New_folder/index.php');
+      Util::redirect('/New_folder/index.php');
     }
   }
 
@@ -212,7 +212,7 @@ class Auth
       if ($user->startPasswordReset()) {
 
         // Note hardcoded protocol
-        $url = 'http://'.$_SERVER['HTTP_HOST'].'/sandbox/breez/New_folder/reset_password.php?token=' . $user->password_reset_token;
+        $url = 'http://'.$_SERVER['HTTP_HOST'].'/New_folder/reset_password.php?token=' . $user->password_reset_token;
 
         $body = <<<EOT
 

@@ -10,6 +10,6 @@ require_once('includes/init.php');
 Auth::getInstance()->logout();
 
 // Redirect to home page
-Util::redirect('/sandbox/breez/New_folder/index.php');
+Util::redirect('/New_folder/index.php');
 
 ?>

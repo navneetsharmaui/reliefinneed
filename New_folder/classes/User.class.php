@@ -698,7 +698,7 @@ class User
   private function _sendActivationEmail($token)
   {
     // Note hardcoded protocol
-    $url = 'http://'.$_SERVER['HTTP_HOST'].'/sandbox/breez/New_folder/activate_account.php?token=' . $token;
+    $url = 'http://'.$_SERVER['HTTP_HOST'].'/New_folder/activate_account.php?token=' . $token;
 
     $body = <<<EOT
 

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (empty($user->errors)) {
 
     // Redirect to signup success page
-    Util::redirect('/sandbox/breez/New_folder/signup_success.php');
+    Util::redirect('/New_folder/signup_success.php');
   }
 }
 

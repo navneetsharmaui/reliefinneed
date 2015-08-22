@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $url = $_SESSION['return_to'];
       unset($_SESSION['return_to']);
     } else {
-      $url = '/sandbox/breez/New_folder/index.php';
+      $url = '/New_folder/index.php';
     }
 
     Util::redirect($url);
@@ -63,7 +63,7 @@ include('includes/header.php');
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" >Login</button>
-        <a href="/sandbox/breez/New_folder/forgot_password.php">I forgot my password</a>
+        <a href="/New_folder/forgot_password.php">I forgot my password</a>
       </form>
            </div>
          </div>

@@ -66,7 +66,7 @@
   <div class="uk-form-row">
     <div class="uk-form-controls">
       <button class="uk-button uk-button-primary">Save</button>
-      <a href="/sandbox/breez/New_folder/admin/users<?php if (isset($user->id)) { echo '/show.php?id=' . $user->id; } ?>">Cancel</a>
+      <a href="/New_folder/admin/users<?php if (isset($user->id)) { echo '/show.php?id=' . $user->id; } ?>">Cancel</a>
     </div>
   </div>
 </form>
