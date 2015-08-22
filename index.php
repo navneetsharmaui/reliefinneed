@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Profile
+ */
+
+// Initialisation
+require_once('New_folder/includes/init.php');
+
+// Require the user to be logged in before they can see this page.
+Auth::getInstance()->requireLogin();
+
+// Set the title, show the page header, then the rest of the HTML
+$page_title = 'index';
 
 
 if (!empty($_GET['location'])){
@@ -163,17 +175,20 @@ if (!empty($_GET['location'])){
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
       <ul class="nav navbar-nav navbar-right">
-                 <li class="#"><a href="/New_folder/admin/users">Admin</a></li>
-      
+       <?php if (Auth::getInstance()->isLoggedIn()): ?>
 
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Logout</a></li>
+          <?php if (Auth::getInstance()->isAdmin()): ?>
+           <li class="#"><a href="/New_folder/admin/users">Admin</a></li>
+          <?php endif; ?>
+
+            <li><a href="/New_folder/profile.php">Profile</a></li>
+            <li><a href="/New_folder/logout.php">Logout</a></li>
             
-      
+          <?php else: ?> 
 
-            <li><a href="#">Login</a></li>
+            <li><a href="/New_folder/login.php">Login</a></li>
           
-            
+          <?php endif; ?>        
       </ul>
     <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
       <div class="form-group">
