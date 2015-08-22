@@ -20,9 +20,11 @@ jQuery(document).ready(function() {
 	    Slider 2
 	*/
 	$('.slider-2-container').backstretch([
-	  "bower_components/img/slider/3.jpg",
-	  "bower_components/img/slider/2.jpg",
-	  "bower_components/img/slider/1.jpg"
+	  "bower_components/img/slider/10.jpg",
+	  "bower_components/img/slider/11.jpg",
+	  "bower_components/img/slider/12.jpg"
+	  "bower_components/img/slider/13.jpg"
+	  "bower_components/img/slider/14.jpg"
 	], {duration: 3000, fade: 750});
 	
 	/*

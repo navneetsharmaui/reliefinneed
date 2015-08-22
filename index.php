@@ -180,12 +180,12 @@ if (!empty($_GET['location'])){
            <li class="#"><a href="/sandbox/breez/New_folder/admin/users">Admin</a></li>
           <?php endif; ?>
 
-            <li><a href="/sandbox/breez/New_folder/profile.php">Profile</a></li>
-            <li><a href="/sandbox/breez/New_folder/logout.php">Logout</a></li>
+            <li><a href="/New_folder/profile.php">Profile</a></li>
+            <li><a href="/New_folder/logout.php">Logout</a></li>
             
           <?php else: ?> 
 
-            <li><a href="/sandbox/breez/New_folder/login.php">Login</a></li>
+            <li><a href="/New_folder/login.php">Login</a></li>
           
           <?php endif; ?>        
       </ul>
