@@ -158,14 +158,14 @@ if (!empty($_GET['location'])){
        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
           <span class="sr-only">Toggle navigation</span>
        </button>
-       <a class="navbar-brand" href="/sandbox/breez/New_folder/index.php"><!--<img src="#" alt="Brand"> -->reliefineed</a>
+       <a class="navbar-brand" href="/New_folder/index.php"><!--<img src="#" alt="Brand"> -->reliefineed</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
       <ul class="nav navbar-nav navbar-right">
        <?php if (Auth::getInstance()->isLoggedIn()): ?>
 
           <?php if (Auth::getInstance()->isAdmin()): ?>
-           <li class="#"><a href="/sandbox/breez/New_folder/admin/users">Admin</a></li>
+           <li class="#"><a href="/New_folder/admin/users">Admin</a></li>
           <?php endif; ?>
 
             <li><a href="/New_folder/profile.php">Profile</a></li>
