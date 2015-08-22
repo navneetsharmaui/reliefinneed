@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Profile
+ */
+
+// Initialisation
+require_once('New_folder/includes/init.php');
+
+// Require the user to be logged in before they can see this page.
+Auth::getInstance()->requireLogin();
+
+// Set the title, show the page header, then the rest of the HTML
+$page_title = 'index';
+
 
 if (!empty($_GET['location'])){
   /**
