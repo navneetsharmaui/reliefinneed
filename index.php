@@ -1,17 +1,14 @@
 <?php
 
 /**
- * Forgotten password form
+ * Profile
  */
 
 // Initialisation
-require_once('includes/init.php');
+require_once('New_folder/includes/init.php');
 
-// Require the user to NOT be logged in before they can see this page.
-Auth::getInstance()->requireGuest();
-
-
-
+// Require the user to be logged in before they can see this page.
+Auth::getInstance()->requireLogin();
 
 // Set the title, show the page header, then the rest of the HTML
 $page_title = 'index';
