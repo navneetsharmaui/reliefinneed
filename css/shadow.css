@@ -1,0 +1,66 @@
+$bounce-color   :   #4db8d6;
+$image-size     :   200px;
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body, html {
+    background: WhiteSmoke;
+    font-family: 'Ubuntu', sans-serif;
+    color: #0f383e;
+    text-align: center;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+  
+  .holder {
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    margin-left: -110px;
+    margin-top: -185px;
+
+    .avatar {
+      margin: 25px auto;
+
+      img.user {
+        height: $image-size;
+        width: $image-size;
+        background-color: $bounce-color ;
+        box-shadow: 0 0 0 5px $bounce-color ;
+        border-radius: 50%;
+    
+         &:hover {
+          cursor: pointer; 
+          -moz-animation:bounceOut .4s linear;
+          -webkit-animation:bounceOut .4s linear;
+        }
+      
+      }
+  
+    }
+
+  }
+
+}
+
+@-moz-keyframes bounceOut {
+        0%{ box-shadow: 0 0 0 4px $bounce-color; opacity:1;}
+        25%{ box-shadow: 0 0 0 1px $bounce-color; opacity:1;}
+        50%{ box-shadow: 0 0 0 7px $bounce-color; opacity:1; }
+        75%{ box-shadow: 0 0 0 4px $bounce-color; opacity:1;}
+        100%{ box-shadow: 0 0 0 5px $bounce-color; opacity:1;}
+}
+
+@-webkit-keyframes bounceOut {
+        0%{ box-shadow: 0 0 0 4px $bounce-color; opacity:1;}
+        25%{ box-shadow: 0 0 0 1px $bounce-color; opacity:1;}
+        50%{ box-shadow: 0 0 0 7px $bounce-color; opacity:1; }
+        75%{ box-shadow: 0 0 0 4px $bounce-color; opacity:1;}
+        100%{ box-shadow: 0 0 0 5px $bounce-color; opacity:1;}
+}
