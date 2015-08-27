@@ -132,13 +132,13 @@ ul.navbar-nav li a { padding: 23px 20px; background: #fff; border-top: 5px solid
 ul.navbar-nav li form { padding: 23px 20px; background: #fff; border-top: 5px solid #fff; color: #455A64; }
 ul.navbar-nav li.active a { background: #f8f8f8; border-color: #5D4037; color: #455A64; }
 
-ul.navbar-nav li a:hover, ul.navbar-nav li a:focus { background: #5D4037; border-color: #5D4037; color: #fff; outline: 0; }
+
 
 .nav .open > a { background: #f8f8f8; border-color: #5D4037; color: #455A64; }
 .nav .open > a:hover, .nav .open > a:focus { background: #5D4037; border-color: #5D4037; color: #fff; }
 
 ul.navbar-nav li a i { line-height: 35px; color: #aaa; }
-ul.navbar-nav li a:hover i, ul.navbar-nav li a:focus i { color: #fff; }
+
 
 .dropdown-menu {
 	border: 0;
