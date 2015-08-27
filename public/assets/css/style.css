@@ -161,9 +161,11 @@ ul.navbar-nav li.active .dropdown-menu > .active > a:focus { background: #5D4037
 .navbar>.container .navbar-brand { margin-left: 0; }
 
 .navbar-brand {
+
   line-height:12px;
   padding-top:15%;
   padding-bottom:5px;
+  padding: 23px 20px; background: #fff; border-top: 5px solid #fff; color: #455A64;
 }
 
 .navbar-brand small {
