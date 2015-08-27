@@ -1,28 +1,42 @@
 <?php
-// Show the page header, then the rest of the HTML
 include('includes/header.php');
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>reliefinnedd</title>
-	<link rel="stylesheet" type="text/css" href="">
-  
-    <!-- Loading flat-ui-->
-    <link rel="stylesheet" type="text/css" href="public/assets/flat-ui/dist/css/vendor/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/zigtimeline.css">
-
-	<link rel="stylesheet" type="text/css" href="public/assets/font-awesome-4.4.0/css/font-awesome.min.css">
-    	
-    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="public/assets/flat-ui/dist/js/vendor/jquery.min.js"></script>
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="public/assets/flat-ui/dist/js/vendor/video.js"></script>
-    <script src="public/assets/flat-ui/dist/js/flat-ui.min.js"></script>
-</head>
 <body>
+    <!-- Top menu -->
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">reliefinneed </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="top-navbar-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="Intro.php">Home</a>
+            </li>
+            <li>
+              <a href="Intro.php">Documentation </a>
+            </li>
+            <li>
+              <a href="includes/index.php">Try app! </a>
+            </li>
+
+
+            <li>
+              <a href="#">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
