@@ -19,13 +19,13 @@ include('includes/header.php');
         <div class="collapse navbar-collapse" id="top-navbar-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="Intro.php">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li>
-              <a href="Intro.php">Documentation </a>
+              <a href="index.php">Documentation </a>
             </li>
             <li>
-              <a href="includes/index.php">Try app! </a>
+              <a href="includes/app.php">Try app! </a>
             </li>
 
 
