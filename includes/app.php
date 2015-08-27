@@ -182,7 +182,7 @@ if (!empty($_GET['location'])){
 						</li>
 
 						<li>
-							<form class="navbar-form navbar-right" action="index.php" method="get" role="search">
+							<form class="navbar-form navbar-right" action="app.php" method="get" role="search">
 							  <div class="form-group">
 							   <div class="input-group">
 							    <input class="form-control" id="navbarInput-01" type="text" name="location" placeholder="Search">
