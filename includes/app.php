@@ -51,7 +51,6 @@ if (!empty($_GET['location'])){
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
-        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../public/assets/flat-ui/dist/css/flat-ui.min.css">
         <link rel="stylesheet" href="../public/assets/font-awesome-4.4.0/css/font-awesome.min.css">
@@ -61,7 +60,7 @@ if (!empty($_GET['location'])){
         <link rel="stylesheet" href="../public/assets/css/form-elements.css">
         <link rel="stylesheet" href="../public/assets/css/style.css">
         <link rel="stylesheet" href="../public/assets/css/media-queries.css">
-
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -246,7 +245,7 @@ if (!empty($_GET['location'])){
 						    ?><i class="fa fa-quote-right  "></i>
 	                    </p>
                       <hr class="hrNews">   
-                      <h2>Precations </h2>
+                      <h2>Precautions </h2>
                       <hr class="hrNews">
                       
                       <h3>For children </h3>
