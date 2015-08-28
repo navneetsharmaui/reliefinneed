@@ -536,6 +536,13 @@ footer {
     text-align: left;
 }
 
+.footer-copyright p {
+    margin-top: 15px;
+    line-height: 24px;
+    text-align: left;
+    color: #263238;
+}
+
 .footer-social {
     margin-top: 5px;
     text-align: right;

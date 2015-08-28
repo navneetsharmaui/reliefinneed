@@ -524,42 +524,7 @@ if (!empty($_GET['location'])){
     <!-- Footer -->
         <footer>
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 footer-box wow fadeInUp">
-                        <h4>About Us</h4>
-                        <div class="footer-box-text">
-	                        <p><i class="fa fa-quote-left  fa-pull-left"></i>
-	                        	To rise exponentially from a local body to a worldwide education.
-	                           <i class="fa fa-quote-right  fa-pull-right"></i>
-	                        </p>
-	                        <p><a href="about.html">Read more...</a></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 footer-box wow fadeInDown">
-                        <h4>Email Updates</h4>
-                        <div class="footer-box-text footer-box-text-subscribe">
-                        	<p>Enter your email and you'll be one of the first to get new updates:</p>
-                        	<form role="form" action="assets/subscribe.php" method="post">
-		                    	<div class="form-group">
-		                    		<label class="sr-only" for="subscribe-email">Email address</label>
-		                        	<input type="text" name="email" placeholder="Email..." class="subscribe-email" id="subscribe-email">
-		                        </div>
-		                        <button type="submit" class="btn">Subscribe</button>
-		                    </form>
-		                    <p class="success-message"></p>
-		                    <p class="error-message"></p>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-4 footer-box wow fadeInDown">
-                        <h4>Contact Us</h4>
-                        <div class="footer-box-text footer-box-text-contact">
-	                        <p><i class="fa fa-map-marker"></i> Address:</p>
-	                        <p><i class="fa fa-phone"></i> Phone: +91-8871718551</p>
-	                        <p><i class="fa fa-envelope"></i> Email: shashankrjpt@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                 	<div class="col-sm-12 wow fadeIn">
                 		<div class="footer-border"></div>
