@@ -52,15 +52,15 @@ if (!empty($_GET['location'])){
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
         <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="public/assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="public/assets/flat-ui/dist/css/flat-ui.min.css">
-        <link rel="stylesheet" href="public/assets/font-awesome-4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="public/assets/css/animate.css">
-        <link rel="stylesheet" href="public/assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="public/assets/flexslider/flexslider.css">
-        <link rel="stylesheet" href="public/assets/css/form-elements.css">
-        <link rel="stylesheet" href="public/assets/css/style.css">
-        <link rel="stylesheet" href="public/assets/css/media-queries.css">
+        <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../public/assets/flat-ui/dist/css/flat-ui.min.css">
+        <link rel="stylesheet" href="../public/assets/font-awesome-4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../public/assets/css/animate.css">
+        <link rel="stylesheet" href="../public/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="../public/assets/flexslider/flexslider.css">
+        <link rel="stylesheet" href="../public/assets/css/form-elements.css">
+        <link rel="stylesheet" href="../public/assets/css/style.css">
+        <link rel="stylesheet" href="../public/assets/css/media-queries.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -182,7 +182,7 @@ if (!empty($_GET['location'])){
             </li>
 
             <li>
-              <form class="navbar-form navbar-right" action="index.php" method="get" role="search">
+              <form class="navbar-form navbar-right" action="app.php" method="get" role="search">
                 <div class="form-group">
                  <div class="input-group">
                   <input class="form-control" id="navbarInput-01" type="text" name="location" placeholder="Search">
@@ -547,20 +547,20 @@ if (!empty($_GET['location'])){
         </footer>
 
         <!-- Javascript -->
-        <script src="public/assets/js/jquery-1.11.1.min.js"></script>
-        <script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../public/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
 
-        <script src="public/assets/js/bootstrap-hover-dropdown.min.js"></script>
-        <script src="public/assets/js/jquery.backstretch.min.js"></script>
-        <script src="public/assets/js/wow.min.js"></script>
-        <script src="public/assets/js/retina-1.1.0.min.js"></script>
-        <script src="public/assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="public/assets/flexslider/jquery.flexslider-min.js"></script>
-        <script src="public/assets/js/jflickrfeed.min.js"></script>
-        <script src="public/assets/js/masonry.pkgd.min.js"></script>
+        <script src="../public/assets/js/bootstrap-hover-dropdown.min.js"></script>
+        <script src="../public/assets/js/jquery.backstretch.min.js"></script>
+        <script src="../public/assets/js/wow.min.js"></script>
+        <script src="../public/assets/js/retina-1.1.0.min.js"></script>
+        <script src="../public/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="../public/assets/flexslider/jquery.flexslider-min.js"></script>
+        <script src="../public/assets/js/jflickrfeed.min.js"></script>
+        <script src="../public/assets/js/masonry.pkgd.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="public/assets/js/jquery.ui.map.min.js"></script>
-        <script src="public/assets/js/scripts.js"></script>
+        <script src="../public/assets/js/jquery.ui.map.min.js"></script>
+        <script src="../public/assets/js/scripts.js"></script>
 
     </body>
 
