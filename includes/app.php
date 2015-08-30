@@ -532,7 +532,7 @@ if (!empty($_GET['location'])){
                 </div>
                 <div class="row">
                     <div class="col-sm-7 footer-copyright wow fadeIn">
-                        <p>Copyright 2015 Vigyan Jyoti Private ITI - All rights reserved. Website by <a href="http://www.navneetsharma.in" target="_blank">Navneet Sharama</a>.</p>
+                        <p>Copyright 2015 reliefinneed - All rights reserved. Website by <a href="http://www.navneetsharma.in" target="_blank">Navneet Sharama</a>.</p>
                     </div>
                     <div class="col-sm-5 footer-social wow fadeIn">
                         <a href="#"><i class="fa fa-facebook"></i></a>
