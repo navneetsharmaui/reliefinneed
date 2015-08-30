@@ -48,7 +48,7 @@ include('includes/header.php');
       <ul class="timeline">
         <li class="holder">
           <div class="timeline-image avatar">
-            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/1" alt="">
+            <img class="img-circle img-responsive" src="public/img/pollution1.jpg"  alt="">
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
@@ -65,7 +65,7 @@ include('includes/header.php');
         </li>
         <li class="timeline-inverted">
           <div class="timeline-image shadow">
-            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/2" alt="">
+            <img class="img-circle img-responsive" src="public/img/pollution2.jpg" alt="">
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
@@ -82,7 +82,7 @@ include('includes/header.php');
         </li>
         <li>
           <div class="timeline-image shadow">
-            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/3" alt="">
+            <img class="img-circle img-responsive" src="public/img/pollution3.jpg" alt="">
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
